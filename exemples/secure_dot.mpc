@@ -1,0 +1,6 @@
+n = 3 # количество частей (тройка Бивера)
+a = [sint.get_input_from(0) for _ in range(n)] # получаем разделение а
+b = [sint.get_input_from(1) for _ in range(n)] # получаем разделение b
+
+dp = sum(a[i] * b[i] for i in range(n)) # собираем скалярное произведение
+print_ln('dot(a,b) = %s', dp.reveal())

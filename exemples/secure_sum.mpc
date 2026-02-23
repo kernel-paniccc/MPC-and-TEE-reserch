@@ -1,0 +1,5 @@
+x0 = sint.get_input_from(0) # число P0
+x1 = sint.get_input_from(1) # число P1
+s = x0 + x1                 # конфиденциально считаем сумму
+
+print_ln('sum = %s', s.reveal()) # раскрываем результат
