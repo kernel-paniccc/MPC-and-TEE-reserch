@@ -1,0 +1,14 @@
+[project]
+name = "mpc-and-tee-reserch"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "crypten>=0.4.1",
+    "numpy<2",
+    "torch>=2.1.0,<2.2.0",
+]
+
+[tool.ruff]
+  exclude = ["MP-SPDZ"]
