@@ -1,0 +1,35 @@
+name: Python CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version-file: pyproject.toml
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+        with:
+          enable-cache: true
+
+      - name: Check Python syntax
+        run: |
+          git ls-files -z '*.py' ':(exclude)MP-SPDZ/**' \
+            | xargs -0 python -m py_compile
+
+      - name: Lint Python scripts with Ruff via uv
+        run: |
+          git ls-files -z '*.py' ':(exclude)MP-SPDZ/**' \
+            | xargs -0 uvx ruff check
