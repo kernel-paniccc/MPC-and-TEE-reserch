@@ -4,4 +4,5 @@
 .ruff_cache
 vscode-mpc
 **/Oblivious-Transfer/__pycache__
-
+__pycache__/
+*.py[cod]
