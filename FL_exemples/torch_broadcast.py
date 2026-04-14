@@ -3,8 +3,9 @@ import torch.distributed as dist
 
 
 def init_distributed(rank, world_size):
-    if dist.is_initialized(): return None
-    
+    if dist.is_initialized():
+        return None
+
     dist.init_process_group(
         backend="gloo",
         init_method="tcp://127.0.0.1:29500",
