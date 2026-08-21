@@ -1,8 +1,9 @@
+import hashlib
+
 import nacl.bindings
 import nacl.secret
 from oblivious import ristretto
 
-import hashlib
 
 def hash2point(point):
     return hashlib.blake2b(bytes(point), digest_size=32).digest()

@@ -1,15 +1,16 @@
 
-import random
+import secrets
+
 import matplotlib.pyplot as plt
 
 # Параметры Шамира: t=3 => степень полинома 3, нужно t+1=4 доли для восстановления
-t = 12
+t = 3
 n = 10
 secret = 12
 
-p = 27
+p = 29
 
-coeffs = [secret] + [random.randrange(p) for _ in range(t)]
+coeffs = [secret] + [secrets.randbelow(p) for _ in range(t)]
 
 def f(x):
     """Полином Шамира"""
@@ -23,7 +24,7 @@ def f(x):
 xs = list(range(1, n + 1))
 ys = [f(i) for i in xs]
 
-x_plot = list(range(0, n + 2))
+x_plot = list(range(n + 2))
 y_plot = [f(x) for x in x_plot]
 
 plt.figure(figsize=(10, 5))

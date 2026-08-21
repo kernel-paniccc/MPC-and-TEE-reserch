@@ -1,5 +1,5 @@
-import torch
 import crypten
+import torch
 
 crypten.init()
 x = torch.tensor([10.0, 50.0, 100.0])

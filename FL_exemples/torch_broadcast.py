@@ -4,7 +4,7 @@ import torch.distributed as dist
 
 def init_distributed(rank, world_size):
     if dist.is_initialized():
-        return None
+        return
 
     dist.init_process_group(
         backend="gloo",

@@ -3,7 +3,6 @@ import secrets
 from party import Receiver, Sender
 
 
-
 def main():
     msg0 = b"EdfbnZNu47cZ0gCq"
     msg1 = b"ZR0VPP8Z8yRPu5Xy"

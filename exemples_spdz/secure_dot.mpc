@@ -1,4 +1,4 @@
-n = 3 # количество частей (тройка Бивера)
+n = 3 # размер вектора
 a = [sint.get_input_from(0) for _ in range(n)] # получаем разделение а
 b = [sint.get_input_from(1) for _ in range(n)] # получаем разделение b
 
